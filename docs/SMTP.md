@@ -45,7 +45,7 @@ SMTP_REPORT_FROM='NetAlertX <user@email.com>'
 
 ## Groundmail
 
-Until you verify a sending domain and add a payment method, Groundmail only sends from `noreply@mail.groundmail.dev` to your own account email; other recipients are rejected.
+Until you add a payment method, Groundmail only sends to your own account email: from `noreply@mail.groundmail.dev`, or from your domain once it's verified. Sending to other recipients needs a verified domain and a payment method on file.
 
 1. Verify your sending domain in the Groundmail dashboard.
 2. Go to SMTP and create an SMTP credential (it starts with `gmsmtp_` and is shown once).
