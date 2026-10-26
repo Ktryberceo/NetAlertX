@@ -43,6 +43,28 @@ SMTP_REPORT_TO='some_target_email@gmail.com'
 SMTP_REPORT_FROM='NetAlertX <user@email.com>'
 ```
 
+## Groundmail
+
+Until you verify a sending domain and add a payment method, Groundmail only sends from `noreply@mail.groundmail.dev` to your own account email; other recipients are rejected.
+
+1. Verify your sending domain in the Groundmail dashboard.
+2. Go to SMTP and create an SMTP credential (it starts with `gmsmtp_` and is shown once).
+3. Fill in the NetAlertX settings as below. Use port `2525` if your network blocks outbound port 587.
+
+```python
+SMTP_SERVER='smtp.groundmail.dev'
+SMTP_PORT=587
+SMTP_SKIP_LOGIN=False
+SMTP_USER='groundmail'
+SMTP_PASS='gmsmtp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+SMTP_SKIP_TLS=False
+SMTP_FORCE_SSL=False
+SMTP_REPORT_TO='some_target_email@gmail.com'
+SMTP_REPORT_FROM='NetAlertX <netalertx@your-verified-domain.com>'
+```
+
+More details: [Groundmail SMTP relay](https://docs.groundmail.dev/smtp)
+
 ## GMX
 
 1. Go to your GMX account https://account.gmx.com
